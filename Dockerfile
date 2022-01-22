@@ -3,7 +3,7 @@ FROM python:3.10-slim
 WORKDIR /app
 
 RUN apt-get update \
-    && apt-get install -y git binutils libproj-dev gdal-bin libcurl4-openssl-dev libssl-dev python3-dev python-dev libffi-dev build-essential\
+    && apt-get install -y git binutils libpq-dev libproj-dev gdal-bin libcurl4-openssl-dev libssl-dev python3-dev python-dev libffi-dev build-essential\
     && apt-get clean
 
 RUN mkdir -p /root/.ssh && \
