@@ -3,6 +3,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# JetBrains folders
+.idea/
+
+# Terraform local files
+.terraform/
+
 # C extensions
 *.so
 
