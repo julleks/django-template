@@ -5,6 +5,7 @@ docker push $ECR_REGISTRY/$ECR_REPOSITORY:release-candidate
 
 CURRENT_MANIFEST=$(aws ecr batch-get-image --repository-name $ECR_REPOSITORY --image-ids imageTag=current-release --query 'images[].imageManifest' --output text)
 CANDIDATE_MANIFEST=$(aws ecr batch-get-image --repository-name $ECR_REPOSITORY --image-ids imageTag=release-candidate --query 'images[].imageManifest' --output text)
+aws ecr put-image --repository-name $ECR_REPOSITORY --image-tag $BUILD_ID --image-manifest "$CANDIDATE_MANIFEST"
 
 if [ ! -z "$CURRENT_MANIFEST" ]
 then
