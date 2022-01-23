@@ -13,5 +13,3 @@ then
 fi
 
 aws ecr put-image --repository-name $ECR_REPOSITORY --image-tag current-release --image-manifest "$CANDIDATE_MANIFEST"
-
-aws ecr batch-delete-image --repository-name $ECR_REPOSITORY --image-ids imageTag=release-candidate
